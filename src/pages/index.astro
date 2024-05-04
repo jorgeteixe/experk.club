@@ -1,8 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
 ---
 
-<Layout title="ExPerk.club">
-  <div>this is the landing</div>
-  <a href="/app" class="text-blue-700 hover:underline">Go to app</a>
+<Layout title="ExPerk.club | Experience IRL connections for your workforce">
+  <div class="bg-[#144fcc] flex flex-col">
+    <div class="p-2">
+      <img
+        src="https://www.travelperk.com/wp-content/themes/travelperk/static/img/travelperk-logo-light.svg"
+        alt="TravelPerk logo"
+        class="h-10"
+      />
+    </div>
+    <div class="text-white grid grid-cols-4 my-10">
+      <div class="flex flex-col justify-end">
+        <!-- <Image
+          src={undefined}
+          alt="Two travelers."
+          class="h-full w-full object-cover object-right"
+        /> -->
+      </div>
+      <div class="col-span-2 text-center flex flex-col space-y-8">
+        <p class="text-5xl px-12">
+          Everything you need. One business travel tool.
+        </p>
+        <p class="text-xl">
+          Loaded with all the travel perks your business really needs. From
+          booking to managing, corporate travel has never been this smooth.
+        </p>
+        <a href="/app">
+          <button
+            type="button"
+            class="py-2 px-4 rounded-full font-medium bg-white text-[#144fcc] text-xl"
+          >
+            Try now &gt;
+          </button>
+        </a>
+      </div>
+      <div></div>
+    </div>
+  </div>
 </Layout>
