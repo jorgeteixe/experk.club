@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '../../../layouts/Layout.astro'
+
+import seasonsImg from '../../../assets/season.png'
+import planepathImg from '../../../assets/planepath.png'
+---
+
+<Layout title="ExPerk.club | Preference matcher, spring">
+  <div class="h-screen bg-[#272727] p-4">
+    <div
+      class="w-[500px] border-[10px] border-white rounded-md mx-auto h-full flex flex-col justify-around p-5"
+    >
+      <div class="flex justify-center mt-5">
+        <Image src={seasonsImg} alt="seasons logo" />
+      </div>
+      <h1 class="uppercase text-orange-300 text-4xl text-center font-semibold">
+        When would you like to travel?
+      </h1>
+      <p class="text-2xl font-semibold text-white text-center p-5">
+        You will be presented with different time periods in 2025. If you are
+        available, like it and if not, dislike it.
+      </p>
+      <a href="/app/dates/spring"
+        ><Image src={planepathImg} alt="plane path" /></a
+      >
+    </div>
+  </div>
+</Layout>

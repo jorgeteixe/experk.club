@@ -1,6 +1,8 @@
 export function Card({ imageSrc, title, description, onLike, onDislike }) {
   return (
-    <div className="absolute inset-0 h-[450px] w-[300px] rounded-lg shadow-md overflow-hidden flex flex-col bg-black bg-opacity-30">
+    <div
+      className={`absolute inset-0 h-[450px] w-[300px] rounded-lg shadow-xl overflow-hidden flex flex-col bg-black bg-opacity-30`}
+    >
       <div className="relative grow">
         <img
           src={imageSrc}

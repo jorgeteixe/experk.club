@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '../../../layouts/Layout.astro'
+
+import likeImg from '../../../assets/like.png'
+import dislikeImg from '../../../assets/dislike.png'
+---
+
+<Layout title="ExPerk.club | Preference matcher">
+  <div class="h-screen bg-[#272727] p-4">
+    <div
+      class="w-[500px] border-[10px] bg-[#ebc0c9] border-white rounded-md mx-auto h-full flex flex-col"
+    >
+      <div
+        class="h-2/3 bg-[url('https://cdn.pixabay.com/photo/2021/03/04/13/13/cherry-blossom-6068004_1280.jpg')]"
+      >
+      </div>
+      <div class="relative">
+        <p
+          class="font-['Poetsen One'] text-4xl font-bold text-center uppercase absolute -top-5 left-[166px]"
+        >
+          Spring
+        </p>
+      </div>
+      <p
+        class="font-['Ubuntu Sans Mono'] text-center font-regular text-xl px-8 mt-10"
+      >
+        Would you like to explore a city when the landscapes start to turn
+        vibrant as new seeds sprout and plants start to grow?
+      </p>
+      <div class="flex justify-around mt-10">
+        <a href="/app/dates/summer" class="bg-white rounded-full px-10 py-2">
+          <Image src={likeImg} alt="Like" class="w-16" />
+        </a>
+        <a href="/app/dates/summer" class="bg-white rounded-full px-10 py-2">
+          <Image src={dislikeImg} alt="Dislike" class="w-16" />
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

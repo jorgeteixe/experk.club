@@ -1,21 +1,42 @@
 ---
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap'); */
+
+  @font-face {
+    font-family: 'GlacialIndifference';
+    src: url('/fonts/GlacialIndifference-Bold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'CSGordonRegular';
+    src: url('/fonts/CSGordonRegular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
