@@ -1,0 +1,30 @@
+---
+import CardSwiper from '../../components/PreferencesInput'
+import Layout from '../../layouts/Layout.astro'
+
+const questions = [
+  {
+    imageSrc:
+      'https://static01.nyt.com/images/2023/12/07/multimedia/36hours-vienna-01-wklj/36hours-vienna-01-wklj-mediumSquareAt3X.jpg',
+    title: 'Vienna',
+    description:
+      'Vienna is the capital, most populous city, and one of nine federal states of Austria.',
+  },
+  {
+    imageSrc:
+      'https://travel.usnews.com/dims4/USNEWS/4bc988e/2147483647/resize/600x400%5E%3E/crop/600x400/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FOlga_GavrilovaTrain-tram-buildings-colorful-street-lisbon.jpg',
+    title: 'Lisbon',
+    description:
+      'Lisbon is the vibrant capital city of Portugal, located on the western coast of Europe overlooking the Atlantic Ocean.',
+  },
+]
+---
+
+<Layout title="ExPerk.club | Preference matcher">
+  <CardSwiper
+    client:load
+    title="destinations"
+    emoji="🛩️"
+    questions={questions}
+  />
+</Layout>

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { Image } from 'astro:assets'
+
+import travelerImg from '../assets/traveler.svg'
 ---
 
 <Layout title="ExPerk.club | Experience IRL connections for your workforce">
@@ -14,11 +16,11 @@ import { Image } from 'astro:assets'
     </div>
     <div class="text-white grid grid-cols-4 my-10">
       <div class="flex flex-col justify-end">
-        <!-- <Image
-          src={undefined}
+        <Image
+          src={travelerImg}
           alt="Two travelers."
           class="h-full w-full object-cover object-right"
-        /> -->
+        />
       </div>
       <div class="col-span-2 text-center flex flex-col space-y-8">
         <p class="text-5xl px-12">

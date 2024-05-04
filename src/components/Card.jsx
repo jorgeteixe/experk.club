@@ -1,37 +1,34 @@
-import { useSpring, animated } from '@react-spring/web'
-import { useDrag } from '@use-gesture/react'
-
-export default function Card({ data, onSwipe, index, total }) {
-  const [{ x, y, scale }, api] = useSpring(() => ({
-    x: 0,
-    y: -10 * index, // Offset cards vertically
-    scale: 1,
-    config: { friction: 50 },
-  }))
-
-  // Handle drag gestures
-  const bind = useDrag(
-    ({ down, movement: [mx, my], direction: [xDir], velocity, cancel }) => {
-      if (down) {
-        api.start({ x: mx, y: my + -10 * index, scale: 1.1 }) // Maintain offset when dragging
-      } else {
-        const xVelocity = velocity > 0.2 ? (xDir > 0 ? 300 : -300) : 0
-        api.start({ x: xVelocity, y: -10 * index, scale: 1 }) // Return to offset position
-
-        if (xVelocity !== 0) {
-          onSwipe(data, xVelocity > 0 ? 'right' : 'left')
-        }
-      }
-    }
-  )
-
+export function Card({ imageSrc, title, description, onLike, onDislike }) {
   return (
-    <animated.div
-      {...bind()}
-      style={{ x, y, scale, touchAction: 'none' }}
-      className="absolute bg-white p-4 rounded shadow max-w-sm w-96 h-128"
-    >
-      <p>{data}</p>
-    </animated.div>
+    <div className="absolute inset-0 h-[450px] w-[300px] rounded-lg shadow-md overflow-hidden flex flex-col bg-black bg-opacity-30">
+      <div className="relative grow">
+        <img
+          src={imageSrc}
+          alt="Profile"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        <div className="absolute bottom-0 left-0 p-3">
+          <h2 className="text-white text-lg font-bold">{title}</h2>
+          <p className="text-white text-sm">{description}</p>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2 p-2 bg-black">
+        <button
+          type="button"
+          onClick={onDislike}
+          className="py-2 bg-red-100 text-red-600 font-medium rounded-md"
+        >
+          👎🏻 Dislike
+        </button>
+        <button
+          type="button"
+          onClick={onLike}
+          className="py-2 bg-green-100 text-green-600 font-medium rounded-md"
+        >
+          👍🏻 Like
+        </button>
+      </div>
+    </div>
   )
 }
