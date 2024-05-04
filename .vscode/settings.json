@@ -1,0 +1,16 @@
+{
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "astro",
+    ],
+    "prettier.documentSelectors": ["**/*.astro", "**/*.jsx"],
+    "[astro]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
