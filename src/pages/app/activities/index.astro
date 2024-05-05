@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import Layout from '../../../layouts/Layout.astro'
 
-import seasonsImg from '../../../assets/season.png'
+import leisureImg from '../../../assets/leisure.png'
 import planepathImg from '../../../assets/planepath.png'
 ---
 
@@ -12,16 +12,17 @@ import planepathImg from '../../../assets/planepath.png'
       class="w-[500px] border-[10px] border-white bg-[#272727] rounded-md mx-auto h-full flex flex-col justify-around p-5"
     >
       <div class="flex justify-center mt-5">
-        <Image src={seasonsImg} alt="seasons logo" />
+        <Image src={leisureImg} alt="seasons logo" />
       </div>
       <h1 class="uppercase text-orange-300 text-4xl text-center font-semibold">
-        When would you like to travel?
+        What would you like to do as leisure?
       </h1>
       <p class="text-2xl font-semibold text-white text-center p-5">
-        You will be presented with different time periods in 2025. If you are
-        available, like it and if not, dislike it.
+        You will be presented with different activities that you can take part
+        in. If you would like to participate in it, like it and if not, dislike
+        it.
       </p>
-      <a href="/app/dates/spring"
+      <a href="/app/activities/food"
         ><Image src={planepathImg} alt="plane path" /></a
       >
     </div>
